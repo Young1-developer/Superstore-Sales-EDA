@@ -1,122 +1,92 @@
-# Superstore Sales Analysis With Python
+# Superstore Sales — Exploratory Data Analysis
 
-## Project Overview
+Exploratory Data Analysis (EDA) on the classic **Superstore** retail dataset, performed in a Jupyter Notebook using Python. The project covers data cleaning, and visual analysis of sales across categories, regions, states, and customer segments.
 
-This project analyzes a Superstore sales dataset using Python to explore sales patterns across products, categories, customers, regions, states, and customer segments.
+## 📊 Project Overview
 
-The analysis was performed in a Jupyter Notebook using Python, Pandas, NumPy, and Matplotlib.
+The goal of this project was to clean and explore a retail transactions dataset to answer key business questions such as:
+- Which product categories generate the highest sales?
+- Which U.S. states and regions contribute the most revenue?
+- What are the top-ordering customers?
+- How does average sales value differ across customer segments?
 
-## Objectives
+## 🗂️ Dataset
 
-The project focuses on answering business questions such as:
+- **File:** `train.csv` (Superstore sales dataset)
+- **Shape:** 9,800 rows × 18 columns
+- **Key columns:** `order_id`, `order_date`, `ship_date`, `ship_mode`, `customer_name`, `segment`, `country`, `city`, `state`, `region`, `category`, `sub-category`, `product_name`, `sales`
+- **Date range:** January 2015 – December 2018
 
-- What are the top-selling products within a category?
-- Which U.S. states generate the highest sales?
-- How are sales distributed across product categories?
-- Which regions generate the highest total sales?
-- Which states have the highest total sales?
-- Which orders contain the highest number of line items?
-- What is the average sales value for each customer segment in the United States?
-- What is the date range covered by the dataset?
+## 🧹 Data Cleaning Steps
 
-## Tools & Technologies
+1. Loaded the dataset with pandas and made a working copy
+2. Standardized column names (lowercase, stripped whitespace, underscores instead of spaces)
+3. Dropped the redundant first index column
+4. Checked for and removed duplicate rows (1 duplicate found and removed)
+5. Checked for missing values (11 missing `postal_code` entries found)
+6. Converted `order_date` and `ship_date` columns to proper datetime format
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Jupyter Notebook
-- VS Code
+## 🔍 Analysis & Visualizations
 
-## Data Preparation
+- Top 10 highest-selling products within the Furniture category
+- Top 10 most recent orders by order date
 
-The notebook includes several data-preparation steps:
+**Top 10 States by Sales (United States)**
+![Top 10 states by sales](visuals/top-10-sales-by-state.png)
 
-1. Loaded the CSV dataset with Pandas.
-2. Inspected the dataset dimensions and columns.
-3. Standardized column names by:
-   - Removing leading/trailing spaces
-   - Replacing spaces with underscores
-   - Converting names to lowercase
-4. Removed the first index-like column.
-5. Checked for duplicate records.
-6. Removed duplicate records.
-7. Checked for missing values.
-8. Converted the order and shipping date fields to datetime values.
+**Sales Count by Category**
+![Sales by category](visuals/sales-by-category.png)
 
-## Exploratory Analysis
+**Total Sales by Region**
+![Total sales by region](visuals/total-sales-by-region.png)
 
-The analysis includes:
+**Total Sales by State**
+![Total sales by state](visuals/total-sales-by-state.png)
 
-### Top Products by Category
+**Top 10 Customers by Number of Orders**
+![Top 10 orders by customer](visuals/top-orders-by-customer.png)
 
-The notebook explores the highest-sales products within the Furniture category.
+**Average Sales per Segment (United States)**
+![Average sales per segment USA](visuals/average-sales-by-segment.png)
 
-### Sales by U.S. State
+## 🛠️ Tools & Libraries
 
-U.S. states are grouped by total sales and the highest-performing states are visualized with a bar chart.
+- Python 3
+- pandas
+- numpy
+- matplotlib
 
-### Sales by Category
+## ▶️ How to Run
 
-The dataset is examined by product category to understand the distribution of records across categories.
+1. Clone this repository
+   ```bash
+   git clone <https://github.com/Young1-developer/Superstore-Sales-EDA>
+   cd <Superstore-Sales-EDA>
+   ```
+2. Install the required libraries
+   ```bash
+   pip install pandas numpy matplotlib
+   ```
+3. Place `train.csv` in the project folder
+4. Open and run the notebook
+   ```bash
+   jupyter notebook project1.ipynb
+   ```
+   or open it in VS Code with the Jupyter extension.
 
-### Sales by Region
+## 📌 Key Takeaways
 
-Total sales are calculated for each region.
+- A small number of duplicate and missing values were identified and handled during cleaning
+- Sales are concentrated in specific states and regions, highlighting geographic opportunities
+- Certain customer segments show consistently higher average order values
+- A handful of customers place a disproportionately high number of orders
 
-The notebook produced the following regional totals:
+## 🚀 Future Improvements
 
-| Region | Total Sales |
-|---|---:|
-| Central | $492,646.91 |
-| East | $669,237.35 |
-| South | $389,151.46 |
-| West | $710,219.68 |
+- Add profit analysis alongside sales
+- Break down performance by sub-category
+- Explore seasonal/monthly sales trends over time
+- Build an interactive dashboard (e.g., with Plotly or Streamlit)
 
-### Sales by State
-
-States are grouped by total sales and the top-performing states are visualized.
-
-### Orders with the Highest Number of Line Items
-
-The notebook counts repeated order IDs to identify orders containing the largest number of line items.
-
-### Average Sales by Customer Segment
-
-The average sales value for each customer segment in the United States is calculated and visualized.
-
-## Key Findings
-
-The current analysis shows differences in sales performance across regions, states, categories, and customer segments.
-
-The regional analysis shows that the West region has the highest total sales among the four regions in the notebook's calculated results, while the South region has the lowest.
-
-Other findings are presented directly in the notebook through Pandas outputs and Matplotlib visualizations.
-
-## Dataset
-
-The dataset contains Superstore-style sales records with fields covering:
-
-- Order information
-- Customer information
-- Location
-- Product information
-- Category and sub-category
-- Sales
-- Order and shipping dates
-
-The notebook initially contained 9,800 rows and 18 columns.
-
-## Project Structure
-
-```text
-Superstore-Sales-EDA/
-│
-├── data/
-│   └── train.csv
-│
-├── notebooks/
-│   └── Superstore_Sales_Analysis.ipynb
-│
-├── README.md
-
+---
+*This project was built as a hands-on exercise in data cleaning and exploratory data analysis with Python.*
