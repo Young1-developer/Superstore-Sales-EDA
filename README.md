@@ -110,7 +110,7 @@ The notebook initially contained 9,800 rows and 18 columns.
 ## Project Structure
 
 ```text
-Superstore-Sales-Analysis/
+Superstore-Sales-EDA/
 │
 ├── data/
 │   └── train.csv
