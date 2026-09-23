@@ -81,12 +81,5 @@ The goal of this project was to clean and explore a retail transactions dataset 
 - Certain customer segments show consistently higher average order values
 - A handful of customers place a disproportionately high number of orders
 
-## 🚀 Future Improvements
-
-- Add profit analysis alongside sales
-- Break down performance by sub-category
-- Explore seasonal/monthly sales trends over time
-- Build an interactive dashboard (e.g., with Plotly or Streamlit)
-
 ---
 *This project was built as a hands-on exercise in data cleaning and exploratory data analysis with Python.*
